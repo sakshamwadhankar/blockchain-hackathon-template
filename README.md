@@ -1,0 +1,87 @@
+# Blockchain Hackathon Template
+
+A production-ready, multi-chain smart contract template for blockchain hackathons. Comes with battle-tested token contracts (ERC20, ERC721, ERC1155) and core business logic (Marketplace, Staking, Governance, Escrow, Vault) — all built on OpenZeppelin 5.x.
+
+## 📦 Contracts
+
+| Contract | Path | Use Case |
+|----------|------|----------|
+| **MyERC20** | `contracts/tokens/MyERC20.sol` | Fungible token with burn, pause, permit, optional supply cap |
+| **MyERC721** | `contracts/tokens/MyERC721.sol` | NFT with enumerable, URI storage, public & batch minting |
+| **MyERC1155** | `contracts/tokens/MyERC1155.sol` | Multi-token with per-token pricing and supply caps |
+| **Marketplace** | `contracts/core/Marketplace.sol` | NFT marketplace — list, buy, cancel, platform fee |
+| **Staking** | `contracts/core/Staking.sol` | Synthetix-style ERC20 staking with reward distribution |
+| **Governance** | `contracts/core/Governance.sol` | Lightweight DAO — propose, token-weighted vote, execute |
+| **Escrow** | `contracts/core/Escrow.sol` | P2P escrow for ETH + ERC20, arbiter dispute resolution |
+| **Vault** | `contracts/core/Vault.sol` | Multi-asset custody vault with per-user accounting |
+
+## 🚀 Quick Start
+
+```bash
+# 1. Install dependencies
+npm install
+
+# 2. Set up environment
+cp .env.example .env
+# Edit .env with your private key and RPC URLs
+
+# 3. Compile contracts
+npm run compile
+
+# 4. Run tests
+npm run test
+
+# 5. Edit deploy.ts — toggle which contracts to deploy
+#    Open scripts/deploy.ts and set DEPLOY flags to true/false
+
+# 6. Deploy to testnet
+npm run deploy:sepolia
+```
+
+## 🌐 Supported Chains
+
+| Chain | Deploy Command | Explorer |
+|-------|---------------|----------|
+| Ethereum Sepolia | `npm run deploy:sepolia` | etherscan.io |
+| Polygon Amoy | `npm run deploy:amoy` | polygonscan.com |
+| Arbitrum Sepolia | `npm run deploy:arbitrumSepolia` | arbiscan.io |
+| Base Sepolia | `npm run deploy:baseSepolia` | basescan.org |
+| Optimism Sepolia | `npm run deploy:optimismSepolia` | optimistic.etherscan.io |
+| BSC Testnet | `npm run deploy:bscTestnet` | bscscan.com |
+| Avalanche Fuji | `npm run deploy:fuji` | snowtrace.io |
+| Scroll Sepolia | `npm run deploy:scrollSepolia` | scrollscan.com |
+| Local Hardhat | `npm run deploy:local` | — |
+
+## 🏆 Hackathon Day Workflow
+
+1. **Clone** this repo
+2. **Toggle** contracts in `scripts/deploy.ts` — enable only what you need
+3. **Customize** constructor params (token names, supply caps, fees, etc.)
+4. **Deploy** to your target testnet
+5. **Build frontend** using the ABIs
+
+## 📁 Where to Find ABIs
+
+After compiling, ABIs are located at:
+
+```
+artifacts/contracts/<ContractFolder>/<ContractName>.sol/<ContractName>.json
+```
+
+For example:
+- `artifacts/contracts/tokens/MyERC20.sol/MyERC20.json`
+- `artifacts/contracts/core/Marketplace.sol/Marketplace.json`
+
+## 🛠 Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run compile` | Compile all Solidity contracts |
+| `npm run test` | Run the full test suite |
+| `npm run test:gas` | Run tests with gas reporting |
+| `npm run node` | Start a local Hardhat node |
+| `npm run clean` | Clean build artifacts |
+
+## License
+
+MIT
