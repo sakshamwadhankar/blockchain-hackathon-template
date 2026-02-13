@@ -1,0 +1,29 @@
+{
+  "name": "blockchain-hackathon-template",
+  "version": "1.0.0",
+  "description": "A comprehensive blockchain hackathon template with ERC20, ERC721, and ERC1155 contracts",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "test:gas": "REPORT_GAS=true hardhat test",
+    "node": "hardhat node",
+    "clean": "hardhat clean",
+    "deploy:local": "hardhat run scripts/deploy.ts --network hardhat",
+    "deploy:sepolia": "hardhat run scripts/deploy.ts --network sepolia",
+    "deploy:amoy": "hardhat run scripts/deploy.ts --network amoy",
+    "deploy:baseSepolia": "hardhat run scripts/deploy.ts --network baseSepolia",
+    "deploy:arbitrumSepolia": "hardhat run scripts/deploy.ts --network arbitrumSepolia",
+    "deploy:optimismSepolia": "hardhat run scripts/deploy.ts --network optimismSepolia",
+    "deploy:bscTestnet": "hardhat run scripts/deploy.ts --network bscTestnet",
+    "deploy:fuji": "hardhat run scripts/deploy.ts --network fuji",
+    "deploy:scrollSepolia": "hardhat run scripts/deploy.ts --network scrollSepolia"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "dotenv": "^16.4.0",
+    "hardhat": "^2.22.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.1.0"
+  }
+}
